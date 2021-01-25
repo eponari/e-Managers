@@ -1,0 +1,50 @@
+Edison
+Ponari123
+5
+Xhoel
+Bano
+250.0 5 5
+1
+Patato
+50.0 50
+1
+Patato
+50.0 50
+1
+Patato
+50.0 50
+1
+Patato
+50.0 50
+1
+Patato
+50.0 50
+Xhoel
+Bano
+32.1 32 0
+Xhoel
+Bano
+32.1 32 0
+Xhoel
+Bano
+32.1 32 0
+Xhoel
+Bano
+32.1 32 0
+
+5
+Beer
+100.0 20
+ 40.0 10 10
+Flour
+85.0 30
+ 30.0 20 50
+Oil
+150.0 15
+ 60.0 15 20
+Pasta
+95.0 30
+ 45.0 12 30
+Sugar
+110.0 25
+ 60.0 12 25
