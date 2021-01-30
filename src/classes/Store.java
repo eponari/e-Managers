@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -103,13 +105,13 @@ public class Store {
 			}
 			
 			if(!loginCompleted) {
-				showLabel.setText("This user does not exist! Try again!");
-			}
-			
-			Scene succesfulLogin=new Scene(showLabel,150,150);
-			message.setScene(succesfulLogin);
-			message.show();
-			
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setTitle("Refill information");
+				alert.setHeaderText(null);
+				alert.setContentText("The username or password you tried is incorrect! Please try again!");
+				alert.initOwner(scene.getWindow());
+				alert.showAndWait();
+			}			
 		});
 		return scene;
 	}
