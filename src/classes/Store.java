@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -64,7 +65,6 @@ public class Store {
 		login.add(new Label("Password:"), 0, 1);
 		login.add(password, 1, 1);
 		login.add(loginBTN,1,2);
-		login.add(new Spinner(0,5,0),2,2);
 		
 		Scene scene= new Scene(login,500,300);
 		
@@ -75,11 +75,19 @@ public class Store {
 			String passwordUsed=password.getText();
 			
 			Stage message=new Stage();
+			
+			message.setTitle("e Managers");
+			message.getIcons().add(new Image("file:src/photos/logo.png"));
+			
 			Label showLabel=new Label();
 			
 			if(usernameUsed.equals(this.getMainManager().getName())&&passwordUsed.equals(this.getMainManager().getPassword())) {
-				showLabel.setText("A manager is logged on!");
+				
+				message.setScene(this.getMainManager().basicWiew(this));
+				message.show();
 				loginCompleted=true;
+				return;
+				
 			}
 			
 			else {
@@ -88,7 +96,7 @@ public class Store {
 					if(usernameUsed.equals(currentEmp.getName())&&passwordUsed.equals(currentEmp.getPassword())) {
 						message.setScene(currentEmp.basicWiew(this));
 						message.show();
-						
+						loginCompleted=true;
 						return;
 					}
 				}

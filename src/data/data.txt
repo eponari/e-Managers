@@ -3,48 +3,172 @@ Ponari123
 5
 Xhoel
 Bano
-250.0 5 5
-1
-Patato
-50.0 50
-1
-Patato
-50.0 50
-1
-Patato
-50.0 50
-1
-Patato
-50.0 50
-1
-Patato
-50.0 50
-Xhoel
-Bano
-32.1 32 0
-Xhoel
-Bano
-32.1 32 0
-Xhoel
-Bano
-32.1 32 0
-Xhoel
-Bano
-32.1 32 0
+250.0 5 13
+3
+Beer
+100.0 6
+Flour
+85.0 1
+Oil
+150.0 3
+3
+Oil
+150.0 8
+Pasta
+95.0 1
+Sugar
+110.0 1
+5
+Beer
+100.0 4
+Flour
+85.0 2
+Oil
+150.0 2
+Pasta
+95.0 2
+Sugar
+110.0 4
+2
+Beer
+100.0 2
+Flour
+85.0 1
+4
+Beer
+100.0 2
+Flour
+85.0 1
+Pasta
+95.0 1
+Sugar
+110.0 4
+4
+Beer
+100.0 1
+Flour
+85.0 1
+Oil
+150.0 1
+Pasta
+95.0 1
+4
+Beer
+100.0 1
+Flour
+85.0 1
+Oil
+150.0 1
+Pasta
+95.0 1
+4
+Beer
+100.0 1
+Flour
+85.0 1
+Oil
+150.0 1
+Pasta
+95.0 1
+4
+Beer
+100.0 1
+Flour
+85.0 1
+Oil
+150.0 1
+Pasta
+95.0 1
+4
+Beer
+100.0 1
+Flour
+85.0 1
+Oil
+150.0 1
+Pasta
+95.0 1
+4
+Beer
+100.0 1
+Flour
+85.0 1
+Oil
+150.0 1
+Pasta
+95.0 1
+4
+Beer
+100.0 1
+Flour
+85.0 1
+Oil
+150.0 1
+Pasta
+95.0 1
+4
+Beer
+100.0 1
+Flour
+85.0 1
+Oil
+150.0 1
+Pasta
+95.0 1
+Drin
+Demushi
+300.0 4 3
+5
+Beer
+100.0 6
+Flour
+85.0 3
+Oil
+150.0 7
+Pasta
+95.0 3
+Sugar
+110.0 3
+0
+2
+Beer
+100.0 2
+Flour
+85.0 2
+Zenel
+Hila
+280.0 5 1
+5
+Beer
+100.0 1
+Flour
+85.0 1
+Oil
+150.0 2
+Pasta
+95.0 3
+Sugar
+110.0 5
+Klaudio
+Bendaj
+300.0 10 0
+Denis
+Dani
+310.0 6 0
 
 5
 Beer
-100.0 20
- 40.0 10 10
+100.0 42
+ 40.0 10
 Flour
-85.0 30
- 30.0 20 50
+85.0 60
+ 30.0 50
 Oil
 150.0 15
- 60.0 15 20
+ 60.0 20
 Pasta
-95.0 30
- 45.0 12 30
+95.0 61
+ 45.0 30
 Sugar
-110.0 25
- 60.0 12 25
+110.0 99
+ 60.0 25

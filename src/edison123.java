@@ -19,46 +19,48 @@ import javafx.stage.Stage;
 import javafxClasses.Login;
 
 public class edison123 extends Application{
+	
+	String dataFile="src/data/data.txt";
+	Store myStore;
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
 
 	@Override
 	public void start(Stage stg) throws Exception {
-		
 		try {
-			String dataFile="src/data/data.txt";
 			// TODO 
 			DataParser read=new DataParser();
-			Scanner input=new Scanner(new File(dataFile)).useLocale(Locale.US);;
+			Scanner input=new Scanner(new File(this.dataFile)).useLocale(Locale.US);;
 			
-			Store myStore = read.readStore(input);
+			this.myStore= read.readStore(input);
 			Manager mymanager=myStore.getMainManager();
 			ArrayList<Product> myproducts=myStore.getProducts();
 			ArrayList<Employee> myemployees=mymanager.getMyEmployees();
-			
-			
-			
-			stg.getIcons().add(new Image("file:src/photos/logo.png"));
-			stg.setScene(myStore.getMainManager().getMyEmployees().get(0).basicWiew(myStore));
-			stg.setTitle("e Managers");
-			stg.show();
-			
-			
-			
-			PrintWriter output= new PrintWriter(new File(dataFile));
-			output.write(myStore.toString());
-			
-			
-			
+				
 			input.close();
-			output.close();
+			
+			stg.setTitle("e Managers");
+			stg.getIcons().add(new Image("file:src/photos/logo.png"));
+			stg.setScene(myStore.storeScene());
+			stg.show();
 		}
 		
 		catch (FileNotFoundException e) {
 			System.out.println("Something is wrong with the file!");
 		}
-		
-		
+	}
+	
+	@Override
+	public void stop() {
+		PrintWriter output;
+		try {
+			output = new PrintWriter(new File(this.dataFile));
+			output.write(this.myStore.toString());
+			output.close();
+		} catch (FileNotFoundException e1) {
+			System.out.println("Something is wrong!");
+		}
 	}
 }

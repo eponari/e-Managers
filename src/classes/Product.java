@@ -6,15 +6,12 @@ import javafx.scene.text.Text;
 
 public class Product extends SoldProduct{
 	double buyingPrice;
-	int pallets;
 	int refill;
-	Spinner<Integer> countQuantity= new Spinner<Integer>(0,this.quantity,0);
+	Spinner<Integer> countQuantity;
 	
-	public Product(String name,double sellingPrice,int quantity,double buyingPrice,int pallets,int refill){
+	public Product(String name,double sellingPrice,int quantity,double buyingPrice,int refill){
 		super(name,sellingPrice,quantity);
-		
 		this.buyingPrice=buyingPrice;
-		this.pallets=pallets;
 		this.refill=refill;
 	}
 	
@@ -33,13 +30,6 @@ public class Product extends SoldProduct{
 		this.buyingPrice = buyingPrice;
 	}
 
-	public int getPallets() {
-		return pallets;
-	}
-	public void setPallets(int pallets) {
-		this.pallets = pallets;
-	}
-
 	public int getRefill() {
 		return refill;
 	}
@@ -56,27 +46,17 @@ public class Product extends SoldProduct{
 	}
 
 	public String toString() {
-		return super.toString()+" "+this.buyingPrice+" "+this.pallets+" "+this.refill+"\n";
+		return super.toString()+" "+this.buyingPrice+" "+this.refill+"\n";
 	}
 	
-	public HBox pane() {
-		HBox wiew= new HBox();
-		
-		wiew.setSpacing(10);
-				
-		wiew.getChildren().addAll(
-				new Text(this.name),
-				countQuantity,
-				new Text(Double.toString(this.sellingPrice))
-		);
-		
-		return wiew;
+	void refreshCountQuantity() {
+		System.out.println("Refreshed");
+		this.countQuantity=new Spinner<Integer>(0,this.quantity,0);
 	}
 	
 	public SoldProduct getProductForBill() {
 		int boughtProducts=this.countQuantity.getValue();
 		this.quantity-=boughtProducts;
-		this.countQuantity.getValueFactory().setValue(0);
 		return new SoldProduct(this.name,this.sellingPrice,boughtProducts);
 	}
 }

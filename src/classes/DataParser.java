@@ -6,6 +6,7 @@ public class DataParser {
 	
 	public SoldProduct readSoldProduct(Scanner input) {
 		String name=input.nextLine();
+		System.out.println(name);
 		double sellingPrice=input.nextDouble();
 		int quantity=input.nextInt();
 		return new SoldProduct(name,sellingPrice,quantity);
@@ -16,10 +17,9 @@ public class DataParser {
 		double sellingPrice=input.nextDouble();
 		int quantity=input.nextInt();
 		double buyingPrice=input.nextDouble();
-		int pallets=input.nextInt();
 		int refill=input.nextInt();
 		
-		return new Product(name,sellingPrice,quantity,buyingPrice,pallets,refill);
+		return new Product(name,sellingPrice,quantity,buyingPrice,refill);
 	}
 	
 	public Bill readBill(Scanner input) {
@@ -31,8 +31,6 @@ public class DataParser {
 		
 		for(int i=0;i<size;i++) {
 			newBill.add(this.readSoldProduct(input));
-		}
-		if(size!=0) {
 			input.nextLine();
 		}
 		
