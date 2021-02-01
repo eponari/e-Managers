@@ -1,20 +1,21 @@
 package classes;
 
 import javafx.scene.control.Spinner;
-import javafx.scene.layout.HBox;
-import javafx.scene.text.Text;
 
 public class Product extends SoldProduct{
-	double buyingPrice;
-	int refill;
-	Spinner<Integer> countQuantity;
+	//private data fields.
+	private double buyingPrice;
+	private int refill;
+	private Spinner<Integer> countQuantity;
 	
+	//constructor.
 	public Product(String name,double sellingPrice,int quantity,double buyingPrice,int refill){
 		super(name,sellingPrice,quantity);
 		this.buyingPrice=buyingPrice;
 		this.refill=refill;
 	}
 	
+	//setters and getters.
 	public Spinner<Integer> getCountQuantity() {
 		return countQuantity;
 	}
@@ -26,6 +27,7 @@ public class Product extends SoldProduct{
 	public double getBuyingPrice() {
 		return buyingPrice;
 	}
+	
 	public void setBuyingPrice(double buyingPrice) {
 		this.buyingPrice = buyingPrice;
 	}
@@ -33,30 +35,34 @@ public class Product extends SoldProduct{
 	public int getRefill() {
 		return refill;
 	}
+	
 	public void setRefill(int refill) {
 		this.refill = refill;
 	}
 
+	//methods for financial information like marginal and total profit.
 	double marginalProfit() {
-		return this.buyingPrice-this.sellingPrice;
+		return this.buyingPrice-this.getSellingPrice();
 	}
 	
 	double totalProfit() {
-		return marginalProfit()*quantity;
+		return marginalProfit()*this.getQuantity();
 	}
 
+	//basic string manipulation to save data.
 	public String toString() {
 		return super.toString()+" "+this.buyingPrice+" "+this.refill+"\n";
 	}
 	
+	//sets the maximum and minimum for our spinner objects as the quantity of the products we have and 0 for minimum.
 	void refreshCountQuantity() {
-		System.out.println("Refreshed");
-		this.countQuantity=new Spinner<Integer>(0,this.quantity,0);
+		this.countQuantity=new Spinner<Integer>(0,this.getQuantity(),0);
 	}
 	
+	//creates a soldProduct from this product with the same name and sellingPrice but a different quantity.
 	public SoldProduct getProductForBill() {
 		int boughtProducts=this.countQuantity.getValue();
-		this.quantity-=boughtProducts;
-		return new SoldProduct(this.name,this.sellingPrice,boughtProducts);
+		this.setQuantity(this.getQuantity()-boughtProducts);
+		return new SoldProduct(this.getName(),this.getSellingPrice(),boughtProducts);
 	}
 }
