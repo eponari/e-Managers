@@ -190,7 +190,7 @@ public class Employee extends Person {
 			}
 			
 			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setTitle("Refill information");
+			alert.setTitle("Bill information");
 			alert.setHeaderText(null);
 			alert.initOwner(scene.getWindow());
 			alert.setContentText("The bill was recorded successfully! The products have been bought! Raport of bills is going to be updated soon!");

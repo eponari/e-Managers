@@ -21,6 +21,7 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
 
 public class Manager extends Person {
 	private ArrayList<Employee> myEmployees;
@@ -72,14 +73,24 @@ public class Manager extends Person {
 	void refreshProductTable(Store myStore) {
 		this.productTable=new GridPane();
 		
-		this.productTable.add(new Label("Name"), 0, 0);
-		this.productTable.add(new Label("Quantity"), 1, 0);
-		this.productTable.add(new Label("Refill amount"), 2, 0);
-		this.productTable.add(new Label("Request"), 3, 0);
+		Label name=new Label("Name");
+		Label quantity=new Label("Quantity");
+		Label refill=new Label("Refill amount");
+		Label request=new Label("Request");
+		
+		name.setStyle("-fx-font-weight: bold;");
+		quantity.setStyle("-fx-font-weight: bold;");
+		refill.setStyle("-fx-font-weight: bold;");
+		request.setStyle("-fx-font-weight: bold;");
+		
+		this.productTable.add(name, 0, 0);
+		this.productTable.add(quantity, 1, 0);
+		this.productTable.add(refill, 2, 0);
+		this.productTable.add(request, 3, 0);
 		
 		this.productTable.setVgap(20);
 		this.productTable.setHgap(20);
-		this.productTable.setGridLinesVisible(true);
+		
 		
 		for(int i=0;i<myStore.getProducts().size();i++) {
 			Button addQuantity = new Button("+");
@@ -109,12 +120,17 @@ public class Manager extends Person {
 	void refreshEmployeeTable() {
 		this.employeeTable=new GridPane();
 		
-		this.employeeTable.add(new Label("Name"), 0, 0);
-		this.employeeTable.add(new Label("Profit for the store"), 1, 0);
+		Label name=new Label("Name");
+		Label profit=new Label("Profit for the store");
+		
+		name.setStyle("-fx-font-weight: bold;");
+		profit.setStyle("-fx-font-weight: bold;");
+		
+		this.employeeTable.add(name, 0, 0);
+		this.employeeTable.add(profit, 1, 0);
 		
 		this.employeeTable.setVgap(30);
 		this.employeeTable.setHgap(30);
-		this.employeeTable.setGridLinesVisible(true);
 		
 		for(int i=0;i<this.getMyEmployees().size();i++) {
 			this.employeeTable.add(new Label(this.getMyEmployees().get(i).getName()), 0, i+1);
@@ -126,6 +142,8 @@ public class Manager extends Person {
 		this.welcomeMessage=new HBox();
 				
 		Label message= new Label("Welcome "+myStore.getMainManager().getName()+" !");
+		
+		message.setFont(new Font("Arial", 24));
 		
 		welcomeMessage.getChildren().add(message);
 		
@@ -161,8 +179,14 @@ public class Manager extends Person {
 		
 		GridPane centerPane= new GridPane();
 		
-		centerPane.add(new Label("Employees"), 0, 0);
-		centerPane.add(new Label("Products"), 1, 0);
+		Label employeesLabel=new Label("Employees");
+		Label productsLabel=new Label("Products");
+		
+		employeesLabel.setStyle("-fx-font-weight: bold;");
+		productsLabel.setStyle("-fx-font-weight: bold;");
+		
+		centerPane.add(employeesLabel, 0, 0);
+		centerPane.add(productsLabel, 1, 0);
 		centerPane.add(this.employeeTable, 0, 1);
 		centerPane.add(this.productTable, 1, 1);
 		
