@@ -32,10 +32,6 @@ public class Manager extends Person {
 	public ArrayList<Employee> getMyEmployees() {
 		return myEmployees;
 	}
-
-	public void setMyEmployees(ArrayList<Employee> myEmployees) {
-		this.myEmployees = myEmployees;
-	}
 	
 	//methods to add and drop employees.
 	public void addEmployee(Employee newEmployee) {
@@ -47,6 +43,7 @@ public class Manager extends Person {
 	}
 	
 	//calculate total profit from the employees.
+	@Override
 	public double getTotalProfit() {
 		double total=0;
 		ArrayList<Employee> currentEmployees=this.getMyEmployees();
@@ -150,11 +147,11 @@ public class Manager extends Person {
 		}
 	}
 	
-	void refreshWelcomeMessage(Store myStore) {
+	void refreshWelcomeMessage() {
 		//create a HBox and display a welcoming message.
 		this.welcomeMessage=new HBox();
 				
-		Label message= new Label("Welcome "+myStore.getMainManager().getName()+" !");
+		Label message= new Label("Welcome "+this.getName()+" !");
 		
 		message.setFont(new Font("Arial", 24));
 		
@@ -180,7 +177,7 @@ public class Manager extends Person {
 		this.refreshEmployeeTable();
 		this.refreshProductTable(myStore);
 		this.refreshProfitBox();
-		this.refreshWelcomeMessage(myStore);
+		this.refreshWelcomeMessage();
 	}
 	
 	@Override

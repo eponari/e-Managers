@@ -22,16 +22,8 @@ public class SoldProduct implements savingData {
 		return name;
 	}
 	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
 	public double getSellingPrice() {
 		return sellingPrice;
-	}
-	
-	public void setSellingPrice(double sellingPrice) {
-		this.sellingPrice = sellingPrice;
 	}
 	
 	public int getQuantity() {

@@ -20,26 +20,14 @@ public class Product extends SoldProduct{
 		return countQuantity;
 	}
 
-	public void setCountQuantity(Spinner<Integer> countQuantity) {
-		this.countQuantity = countQuantity;
-	}
-
 	public double getBuyingPrice() {
 		return buyingPrice;
-	}
-	
-	public void setBuyingPrice(double buyingPrice) {
-		this.buyingPrice = buyingPrice;
 	}
 
 	public int getRefill() {
 		return refill;
 	}
 	
-	public void setRefill(int refill) {
-		this.refill = refill;
-	}
-
 	//methods for financial information like marginal and total profit.
 	double marginalProfit() {
 		return this.buyingPrice-this.getSellingPrice();

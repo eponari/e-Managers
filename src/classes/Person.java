@@ -19,16 +19,8 @@ public abstract class Person implements savingData {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getPassword() {
 		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
 	}
 
 	//abstract methods each class that inheritance from this class will have to implement.

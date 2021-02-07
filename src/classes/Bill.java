@@ -25,17 +25,9 @@ public class Bill implements savingData {
 	public ArrayList<SoldProduct> getBoughtProducts() {
 		return boughtProducts;
 	}
-
-	public void setBoughtProducts(ArrayList<SoldProduct> boughtProducts) {
-		this.boughtProducts = boughtProducts;
-	}
 	
 	public double getTotalPrice() {
 		return totalPrice;
-	}
-
-	public void setTotalPrice(double totalPrice) {
-		this.totalPrice = totalPrice;
 	}
 
 	//method to add and drop sold products.

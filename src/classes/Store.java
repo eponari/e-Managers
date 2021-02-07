@@ -2,6 +2,7 @@ package classes;
 
 import java.util.ArrayList;
 
+import interfaces.savingData;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -15,7 +16,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 
-public class Store {
+public class Store implements savingData {
 	//private data fields.
 	private Manager mainManager;
 	private ArrayList<Product> products;
@@ -36,10 +37,6 @@ public class Store {
 	
 	public ArrayList<Product> getProducts() {
 		return products;
-	}
-	
-	public void setProducts(ArrayList<Product> products) {
-		this.products = products;
 	}
 	
 	//methods to add and delete products from store.

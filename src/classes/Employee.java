@@ -33,7 +33,6 @@ public class Employee extends Person {
 	//constructor.
 	public Employee(String name,String password,double baseWage,int percentageTip){
 		super(name,password);
-		
 		this.baseWage=baseWage;
 		this.percentageTip=percentageTip;
 		this.bills=new ArrayList<Bill>();
@@ -44,80 +43,12 @@ public class Employee extends Person {
 		return baseWage;
 	}
 
-	public void setBaseWage(double baseWage) {
-		this.baseWage = baseWage;
-	}
-
 	public int getPercentageTip() {
 		return percentageTip;
 	}
 
-	public void setPercentageTip(int percentageTip) {
-		this.percentageTip = percentageTip;
-	}
-
 	public ArrayList<Bill> getBills() {
 		return bills;
-	}
-
-	public void setBills(ArrayList<Bill> bills) {
-		this.bills = bills;
-	}
-
-	public HBox getTitleBox() {
-		return titleBox;
-	}
-
-	public void setTitleBox(HBox titleBox) {
-		this.titleBox = titleBox;
-	}
-
-	public HBox getWageBox() {
-		return wageBox;
-	}
-
-	public void setWageBox(HBox wageBox) {
-		this.wageBox = wageBox;
-	}
-
-	public GridPane getTableOfProducts() {
-		return tableOfProducts;
-	}
-
-	public void setTableOfProducts(GridPane tableOfProducts) {
-		this.tableOfProducts = tableOfProducts;
-	}
-
-	public VBox getBoxOfBills() {
-		return boxOfBills;
-	}
-
-	public void setBoxOfBills(VBox boxOfBills) {
-		this.boxOfBills = boxOfBills;
-	}
-
-	public ScrollPane getSp() {
-		return sp;
-	}
-	
-	public void setSp(ScrollPane sp) {
-		this.sp = sp;
-	}
-
-	public Label getMessage() {
-		return message;
-	}
-
-	public void setMessage(Label message) {
-		this.message = message;
-	}
-
-	public Scene getScene() {
-		return scene;
-	}
-
-	public void setScene(Scene scene) {
-		this.scene = scene;
 	}
 
 	//methods to add and delete bills from employee.
@@ -129,6 +60,7 @@ public class Employee extends Person {
 	}
 	
 	//methods for financial analysis.
+	@Override
 	double getTotalProfit() {
 		double total=0;
 		ArrayList<Bill> currentBills=this.getBills();

@@ -11,10 +11,10 @@ import javafx.stage.Stage;
 public class Main extends Application{
 	
 	//the file where the data is read and stored.
-	String dataFile="src/data/data.txt";
+	private File dataFile=new File("src/data/data.txt");
 	
 	//the store the application is supervising.
-	Store myStore;
+	private Store myStore;
 	
 	//main method to launch the application.
 	public static void main(String[] args) {
@@ -28,7 +28,7 @@ public class Main extends Application{
 			// Create a dataParser that I have created to read the info in files. 
 			DataParser read=new DataParser();
 			//create a scanner using the file.
-			Scanner input=new Scanner(new File(this.dataFile)).useLocale(Locale.US);;
+			Scanner input=new Scanner(this.dataFile).useLocale(Locale.US);;
 			
 			//read the store using the dataParser.
 			this.myStore= read.readStore(input);
@@ -56,7 +56,7 @@ public class Main extends Application{
 		//create a printWriter to write the new changed data in the file we read the data from.
 		PrintWriter output;
 		try {
-			output = new PrintWriter(new File(this.dataFile));
+			output = new PrintWriter(this.dataFile);
 			output.write(this.myStore.toString());
 			output.close();
 		}
