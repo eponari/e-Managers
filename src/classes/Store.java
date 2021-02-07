@@ -49,7 +49,7 @@ public class Store implements savingData {
 	}
 	
 	//method to create a login into the store application.
-	public Scene storeScene() {
+	public void storeScene(Stage stg) {
 		//create a gridPane.
 		GridPane login=new GridPane();
 		
@@ -92,11 +92,9 @@ public class Store implements savingData {
 			
 			//we check is this is the manager since he is unique.
 			if(usernameUsed.equals(this.getMainManager().getName())&&passwordUsed.equals(this.getMainManager().getPassword())) {
-				
+
 				//set the scene as the scene of our manager and show it.
-				message.setScene(this.getMainManager().basicWiew(this));
-				message.show();
-				
+				this.getMainManager().showBasicWiew(message,this);
 				//end the function of the button.
 				return;
 			}
@@ -109,10 +107,9 @@ public class Store implements savingData {
 					//take care of the current employee we are in.
 					Employee currentEmp=this.getMainManager().getMyEmployees().get(i);
 					if(usernameUsed.equals(currentEmp.getName())&&passwordUsed.equals(currentEmp.getPassword())) {
-						
+												
 						//set the scene as the scene of this employee and show it.
-						message.setScene(currentEmp.basicWiew(this));
-						message.show();
+						currentEmp.showBasicWiew(message, this);
 						
 						//end the function of the button.
 						return;
@@ -129,11 +126,11 @@ public class Store implements savingData {
 				alert.setContentText("The username or password you tried is incorrect! Please try again!");
 				alert.initOwner(scene.getWindow());
 				alert.showAndWait();
-			}			
+			}		
 		});
 		
-		//return this scene we created.
-		return scene;
+		//setScene of this stage as our scene.
+		stg.setScene(scene);
 	}
 	
 	//using a stringBuffer, turn the data of this object into a string.

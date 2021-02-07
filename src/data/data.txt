@@ -1,9 +1,9 @@
 Edison
 Ponari123
-5
+7
 Xhoel
 Bano
-250.0 5 17
+250.0 5 18
 3
 Beer
 100.0 6
@@ -139,6 +139,11 @@ Oil
 150.0 1
 Sugar
 110.0 1
+2
+Beer
+100.0 3
+Flour
+85.0 1
 Drin
 Demushi
 300.0 4 3
@@ -175,7 +180,7 @@ Sugar
 110.0 5
 Klaudio
 Bendaj
-300.0 10 1
+300.0 10 9
 4
 Beer
 100.0 4
@@ -185,6 +190,58 @@ Oil
 150.0 2
 Pasta
 95.0 1
+3
+Beer
+100.0 5
+Flour
+85.0 1
+Sugar
+110.0 1
+2
+Oil
+150.0 5
+Pasta
+95.0 1
+3
+Flour
+85.0 7
+Oil
+150.0 1
+Pasta
+95.0 1
+2
+Oil
+150.0 1
+Sugar
+110.0 7
+3
+Beer
+100.0 10
+Oil
+150.0 2
+Pasta
+95.0 1
+3
+Oil
+150.0 1
+Pasta
+95.0 5
+Sugar
+110.0 7
+4
+Flour
+85.0 1
+Oil
+150.0 1
+Pasta
+95.0 4
+Sugar
+110.0 12
+2
+Flour
+85.0 8
+Oil
+150.0 1
 Denis
 Dani
 310.0 6 3
@@ -207,20 +264,42 @@ Oil
 150.0 3
 Sugar
 110.0 1
+Sid
+Cenaj
+350.0 3 1
+4
+Beer
+100.0 5
+Flour
+85.0 2
+Oil
+150.0 1
+Pasta
+95.0 1
+Livia
+Basha
+320.0 4 1
+3
+Beer
+100.0 6
+Flour
+85.0 1
+Pasta
+95.0 1
 
 5
 Beer
-100.0 77
+100.0 88
  40.0 10
 Flour
-85.0 147
+85.0 126
  30.0 50
 Oil
-150.0 67
+150.0 134
  60.0 20
 Pasta
-95.0 175
+95.0 161
  45.0 30
 Sugar
-110.0 164
+110.0 137
  60.0 25

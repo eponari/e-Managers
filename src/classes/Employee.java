@@ -141,7 +141,7 @@ public class Employee extends Person {
 		this.boxOfBills.getChildren().addAll(billsTitle,sp);
 	}
 	
-	void refreshTableOfProducts(Store myStore) {
+	void refreshTableOfProducts(Stage stg,Store myStore) {
 		//create a gridPane and set the vertical and horizontal gap.
 		this.tableOfProducts= new GridPane();
 		this.tableOfProducts.setHgap(15);
@@ -201,6 +201,9 @@ public class Employee extends Person {
 				alert.setContentText("The bill was recorded successfully! The products have been bought! Raport of bills is going to be updated soon!");
 
 				alert.showAndWait();
+				
+				this.showBasicWiew(stg, myStore);
+				
 			}
 		});
 		
@@ -232,7 +235,18 @@ public class Employee extends Person {
 		titleBox.setAlignment(Pos.CENTER);
 	}
 	
-	void refreshScene(Store myStore) {
+	//abstract methods we need to implement.
+	
+	@Override
+	void refresh(Stage stg,Store myStore) {
+		//refresh all JavaFX elements.
+		this.refreshBoxOfBills();
+		this.refreshBoxWage();
+		this.refreshTableOfProducts(stg,myStore);
+		this.refreshTitleBox();
+	}
+	
+	void refreshScene(Stage stg,Store myStore) {
 		//create a borderPane and as mainPane.
 		BorderPane mainPane=new BorderPane();
 		
@@ -240,7 +254,7 @@ public class Employee extends Person {
 		GridPane centerPane=new GridPane();
 		
 		//refresh the JavaFX elements.
-		this.refresh(myStore);
+		this.refresh(stg,myStore);
 		
 		//set spacing and positioning.
 		centerPane.setHgap(50);
@@ -261,22 +275,12 @@ public class Employee extends Person {
 		this.scene = new Scene(mainPane,500,500);
 	}
 	
-	//abstract methods we need to implement.
-	
 	@Override
-	void refresh(Store myStore) {
-		//refresh all JavaFX elements.
-		this.refreshBoxOfBills();
-		this.refreshBoxWage();
-		this.refreshTableOfProducts(myStore);
-		this.refreshTitleBox();
-	}
-	
-	@Override
-	public Scene basicWiew(Store myStore) {
+	public void showBasicWiew(Stage stg,Store myStore) {
 		//return the refreshed scene.
-		this.refreshScene(myStore);
-		return this.scene;
+		this.refreshScene(stg,myStore);
+		stg.setScene(this.scene);
+		stg.show();
 	}
 
 }

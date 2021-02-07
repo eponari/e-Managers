@@ -41,7 +41,7 @@ public class Main extends Application{
 			stg.getIcons().add(new Image("file:src/photos/logo.png"));
 			
 			//set Scene as the scene from the store.
-			stg.setScene(myStore.storeScene());
+			this.myStore.storeScene(stg);
 			stg.show();
 		}
 		//catch the error in case something is wrong in the file of data.

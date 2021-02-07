@@ -1,7 +1,7 @@
 package classes;
 
 import interfaces.savingData;
-import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public abstract class Person implements savingData {
 	//private data fields.
@@ -25,8 +25,8 @@ public abstract class Person implements savingData {
 
 	//abstract methods each class that inheritance from this class will have to implement.
 	abstract double getTotalProfit();
-	abstract Scene basicWiew(Store myStore);
-	abstract void refresh(Store myStore);
+	abstract void showBasicWiew(Stage stg,Store myStore);
+	abstract void refresh(Stage stg,Store myStore);
 	
 	//basic string manipulation to save data.
 	public String toString() {
