@@ -121,7 +121,7 @@ public class Store implements savingData {
 			if(!loginCompleted) {
 				//create a alert to tell the user theirs userName or password is wrong.
 				Alert alert = new Alert(AlertType.ERROR);
-				alert.setTitle("Refill information");
+				alert.setTitle("Login failed");
 				alert.setHeaderText(null);
 				alert.setContentText("The username or password you tried is incorrect! Please try again!");
 				alert.initOwner(scene.getWindow());

@@ -196,8 +196,13 @@ public class Manager extends Person {
 	
 	void refreshButton(Stage stg,Store myStore) {
 		this.addEmployee.setOnMouseClicked(e->{
+			
 			//stage to register the new employee.
 			Stage registerStage=new Stage();
+			
+			registerStage.getIcons().add(stg.getIcons().get(0));
+			
+			registerStage.setTitle("New Employee Registration");
 			
 			//title we give the registration form.
 			Label title= new Label("New employee");
@@ -232,8 +237,13 @@ public class Manager extends Person {
 			//when add button is clicked.
 			add.setOnMouseClicked(f->{
 				try {
+					if(getName.getText().equals("")||getPassword.getText().equals("")||getBaseWage.getText().equals("")) {
+						throw new Exception();
+						
+					}
 					//try to create a new employee and add it to the store.
 					Employee newEmployee=new Employee(getName.getText(),getPassword.getText(),Double.parseDouble(getBaseWage.getText()),getPercentageTip.getValue());
+					
 					
 					this.addEmployee(newEmployee);
 					
@@ -260,6 +270,7 @@ public class Manager extends Person {
 					alert.initOwner(mainScreen.getWindow());
 					alert.setContentText("This data can't be used to create an employee!");
 					alert.showAndWait();
+					return;
 				}
 				
 			});
